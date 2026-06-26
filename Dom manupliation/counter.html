@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#f4f4f4;
+        }
+
+        .container{
+            text-align:center;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        h1{
+            font-size:50px;
+            margin:20px 0;
+        }
+
+        button{
+            padding:10px 20px;
+            margin:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Counter App</h2>
+
+    <h1 id="count">0</h1>
+
+    <button id="decrease">-</button>
+    <button id="reset">Reset</button>
+    <button id="increase">+</button>
+</div>
+
+<script>
+    let count = 0;
+
+    const countValue = document.getElementById("count");
+    const increase = document.getElementById("increase");
+    const decrease = document.getElementById("decrease");
+    const reset = document.getElementById("reset");
+
+    increase.addEventListener("click", function () {
+        count++;
+        countValue.textContent = count;
+    });
+
+    decrease.addEventListener("click", function () {
+        count--;
+        countValue.textContent = count;
+    });
+
+    reset.addEventListener("click", function () {
+        count = 0;
+        countValue.textContent = count;
+    });
+</script>
+
+</body>
+</html>
