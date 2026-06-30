@@ -1,85 +1,21 @@
-// // console.log("Hello, World!");
-// // console.log("This is a practice file for JavaScript.");
-// // console.log("Let's learn and practice JavaScript together!");
-
-// // let a=5;
-// // var b=6;
-// // function sayhello(){
-// //     console.log("Hello, World!");
-// // }
-// // console.log(a);
-// // sayhello();
+// // console.log("6")
+// // setTimeout(() => console.log("Hello, World!"), 1000);
+// // Promise.resolve().then()
 
 
-// // // SCOPE
-// // function scope(){
-// //     if(true){
-// //         // let a=5;
-// //         // const num=10;
-// //         // console.log(a);
-// //         var num=20;
-// //         // console.log(num);
-
-// //     }
-// //     // console.log(a);
-    
-// // }
-// // console.log(num);
-// // scope();
+// console.log("start");
+// setTimeout(() => console.log("Hello!"), 0);
+// console.log("end");
+console.log('1');
+Promise.resolve().then(() => console.log('g'));
+console.log('2');
+setTimeout(() => console.log('3'), 3000);
+console.log('4');
+setTimeout(() => console.log('5'), 1000);
+Promise.resolve().then(() => console.log('8'));
+console.log('6');
+setTimeout(() => console.log('7'),2000);
 
 
-       
-// //               let        const       var
-// // scope         block     block       function
-
-// // hoisting      hoisted   hoisted       Hoisted
-// //                              and TDZ
-// //               and TDZ
-
-// // function outer(){
-// //     let count=0;
-// //     function inner(){
-// //         count++;
-// //         console.log(count);
-// //     }
-// //     return inner;
-// // }
-
-// // const counter=outer();
-// // counter();
-// // counter();
-
-// function createBankAccount(initialBalance) {
-//     let balance = initialBalance;
-
-//     return {
-//         deposit(amount) {
-//             balance += amount;
-//             console.log(`Deposited: ${amount}. New balance: ${balance}`);
-//         },
-
-//         withdraw(amount) {
-//             if (amount <= balance) {
-//                 balance -= amount;
-//                 console.log(`Withdrew: ${amount}. New balance: ${balance}`);
-//             } else {
-//                 console.log(`Insufficient funds. Current balance: ${balance}`);
-//             }
-//         },
-
-//         getBalance() {
-//             console.log(`Current balance: ${balance}`);
-//             return balance;
-//         }
-//     };
-// }
-
-// // Example Usage
-// const account = createBankAccount(1000);
-
-// account.deposit(500);      // Deposited: 500. New balance: 1500
-// account.withdraw(300);     // Withdrew: 300. New balance: 1200
-// account.withdraw(1500);    // Insufficient funds. Current balance: 1200
-// account.getBalance();      // Current balance: 1200
 
 
