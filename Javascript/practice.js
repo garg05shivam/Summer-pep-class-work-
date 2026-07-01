@@ -15,7 +15,3 @@ setTimeout(() => console.log('5'), 1000);
 Promise.resolve().then(() => console.log('8'));
 console.log('6');
 setTimeout(() => console.log('7'),2000);
-
-
-
-
