@@ -4,38 +4,36 @@
 //getorderdetails()
 
 
-// callGreet(greet);
-// callGreet(greet("Jerry")); // we can't do this
 
-// callGreet(() => {
-//     greet("Harry");
-// })
-
-// setTimeout(() => {
-//     console.log("Hello");
-// }, 1000)
-
-function login() {
-    console.log("Login");
+function login(cb) {
+    console.log("Login...");
+    setTimeout(() => {
+        console.log("Logged in");
+        if (typeof cb === "function") cb();
+    }, 1000);
 }
 
-function getUser() {
+function getUser(cb) {
     console.log("Getting user...");
     setTimeout(() => {
         console.log("User details loaded");
+        if (typeof cb === "function") cb();
     }, 2000);
 }
 
-function getOrders() {
+function getOrders(cb) {
     console.log("Getting orders...");
     setTimeout(() => {
         console.log("Orders loaded");
+        if (typeof cb === "function") cb();
     }, 3000);
 }
 
-function getOrderDetails() {
+function getOrderDetails(cb) {
     console.log("Getting order details...");
     setTimeout(() => {
         console.log("Order details loaded");
+        if (typeof cb === "function") cb();
     }, 4000);
 }
+
