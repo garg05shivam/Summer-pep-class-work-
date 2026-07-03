@@ -84,8 +84,8 @@ Promise.allSettled([
 //     getCategories()
 // ])
 //     .then((results) => {
-//         console.log('success',results);
+//         console.log('success',r esults);
 //     })
 //     // .catch((error) => {
 //     //     console.error('failed' ,error);
-//     // });
+//     // }); 
