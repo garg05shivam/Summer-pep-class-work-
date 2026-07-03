@@ -1,67 +1,91 @@
-const promise=new Promise((resolve, reject) => {
-    let success = true;
-setTimeout(() => {
-    if (success) {
-        resolve("Logged in");
-    }
-    else{
-        reject("Login failed");
-    
-    }
-},1000);
-});
-
-promise.then(data => {
-    console.log(data);
-}).catch(error => {
-    console.error(error);
-}).finally(() => {
-    console.log("Login operation completed.");
-});
-
-
-
-function login() {
-    console.log("Login...");
+function getProducts() {
     return new Promise((resolve, reject) => {
-    setTimeout(() => {
-        console.log("Logged in");
-        resolve();
-    }, 1000);
-})
+    //let success = true;
+     let success = false;  
+        setTimeout(() => {
+            if (success) {
+                resolve('Product Loaded');}
+            else {
+                reject('Product loading failed');
+            }
+        }, 1000);
+    });
 }
 
-function getUser() {
-    console.log("Getting user...");
+function getoffers() {
     return new Promise((resolve, reject) => {
+         //let success = true;
+       let success = false
         setTimeout(() => {
-            console.log("User details loaded");
-            resolve();
+            if (success) {
+                resolve('Offers Loaded');}
+             else {
+                reject('Offers loading failed');
+            }
         }, 2000);
     });
 }
 
-function getOrders() {
-    console.log("Getting orders...");
-    return new Promise((resolve, reject) => {
-    setTimeout(() => {
-        console.log("Orders loaded");
-        if (typeof cb === "function") cb();
-    }, 3000);
-})
-}
+function getCategories() {
 
-function getOrderDetails() {
-    console.log("Getting order details...");
     return new Promise((resolve, reject) => {
+    //    let success = true;
+ let success = false ;
         setTimeout(() => {
-            console.log("Order details loaded");
-            resolve();
-        }, 4000);
+            if (success) {
+                resolve('Categories Loaded');}
+            
+             else {
+                reject('Categories loading failed');
+            }
+        }, 3000);
     });
 }
 
-login()
-.then(getUser)
-.then(getOrders)
-.then(getOrderDetails)
+// Promise.all([
+//     getProducts(),
+//     getoffers(),
+//     getCategories()
+// ])
+//     .then((results) => {
+//         console.log('success',results);
+//     })
+//     .catch((error) => {
+//         console.error('failed' ,error);
+//     });
+
+Promise.allSettled([
+    getProducts(),
+    getoffers(),
+    getCategories()
+])
+    .then((results) => {
+        console.log('success',results);
+    })
+    .catch((error) => {
+        console.error('failed' ,error);
+    });
+
+// Promise.race([
+//     getProducts(),
+//     getoffers(),
+//     getCategories()
+// ])
+//     .then((results) => {
+//         console.log('success',results);
+//     })
+//     .catch((error) => {
+//         console.error('failed' ,error);
+//     });
+
+// Promise.any([
+//     getProducts(),
+//     getoffers(),
+//     getCategories()
+// ])
+//     .then((results) => {
+//         console.log('success',results);
+//     })
+//     // .catch((error) => {
+//     //     console.error('failed' ,error);
+//     // });
