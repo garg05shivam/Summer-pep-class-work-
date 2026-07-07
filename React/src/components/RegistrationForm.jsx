@@ -11,7 +11,7 @@ const emptyForm = {
 
 function RegistrationForm() {
   const [formData, setFormData] = useState(emptyForm);
-  const [submittedData, setSubmittedData] = useState(null);
+  const [submittedData, setSubmittedData] = useState([]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -24,7 +24,8 @@ function RegistrationForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSubmittedData({ ...formData });
+    setSubmittedData((currentData) => [...currentData, { ...formData }]);
+    setFormData(emptyForm);
   }
 
   return (
@@ -112,15 +113,20 @@ function RegistrationForm() {
         <button type="submit">Submit</button>
       </form>
 
-      {submittedData && (
-        <div >
+      {submittedData.length > 0 && (
+        <div>
           <h2>Submitted Details</h2>
-          <p>Name: {submittedData.name}</p>
-          <p>Registration ID: {submittedData.regId}</p>
-          <p>Email: {submittedData.email}</p>
-          <p>Age: {submittedData.age}</p>
-          <p>City: {submittedData.city}</p>
-          <p>Role: {submittedData.role}</p>
+          {submittedData.map((data, index) => (
+            <div key={`${data.regId}-${index}`}>
+              <h3>Entry {index + 1}</h3>
+              <p>Name: {data.name}</p>
+              <p>Registration ID: {data.regId}</p>
+              <p>Email: {data.email}</p>
+              <p>Age: {data.age}</p>
+              <p>City: {data.city}</p>
+              <p>Role: {data.role}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>
