@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const emptyForm = {
   name: "",
@@ -12,6 +12,9 @@ const emptyForm = {
 function RegistrationForm() {
   const [formData, setFormData] = useState(emptyForm);
   const [submittedData, setSubmittedData] = useState([]);
+  const fileInputRef = useRef(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState("");
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -26,13 +29,52 @@ function RegistrationForm() {
     event.preventDefault();
     setSubmittedData((currentData) => [...currentData, { ...formData }]);
     setFormData(emptyForm);
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   }
+
+  function handleFileChange(event) {
+    const file = event.target.files?.[0] ?? null;
+    setSelectedFile(file);
+  }
+
+  function openFilePicker() {
+    fileInputRef.current?.click();
+  }
+
+  useEffect(() => {
+    if (!selectedFile || !selectedFile.type.startsWith("image/")) {
+      setPreviewUrl("");
+      return undefined;
+    }
+
+    const objectUrl = URL.createObjectURL(selectedFile);
+    setPreviewUrl(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [selectedFile]);
 
   return (
     <div>
       <h1>Registration Form</h1>
 
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            File
+            <input
+              ref={fileInputRef}
+              type="file"
+              onChange={handleFileChange}
+              style={{ display: "none" }}
+            />
+          </label>
+          <button type="button" onClick={openFilePicker}>
+            Choose File
+          </button>
+        </div>
         <div>
           <label>
             Name
@@ -128,6 +170,21 @@ function RegistrationForm() {
             </div>
           ))}
         </div>
+      )}
+
+      {selectedFile && selectedFile.type.startsWith("image/") && previewUrl && (
+        <div>
+          <h2>Selected Image</h2>
+          <img
+            src={previewUrl}
+            alt={selectedFile.name}
+            style={{ maxWidth: "250px", display: "block" }}
+          />
+        </div>
+      )}
+
+      {selectedFile && !selectedFile.type.startsWith("image/") && (
+        <p>File selected</p>
       )}
     </div>
   );
