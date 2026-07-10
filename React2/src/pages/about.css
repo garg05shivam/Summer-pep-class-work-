@@ -1,0 +1,77 @@
+.about-section {
+	padding: 0 20px 32px;
+}
+
+.about-card {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 28px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 18px;
+	background: linear-gradient(180deg, rgba(16, 16, 20, 0.96), rgba(9, 9, 11, 0.92));
+	box-shadow: var(--shadow);
+	text-align: left;
+}
+
+.about-kicker {
+	margin: 0 0 8px;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.75rem;
+	color: #ff5c5c;
+}
+
+.about-card h2 {
+	margin: 0 0 12px;
+	font-size: 2rem;
+	line-height: 1.15;
+	color: #ffffff;
+}
+
+.about-copy {
+	max-width: 760px;
+	margin: 0;
+	color: #cfcfd3;
+	line-height: 1.7;
+}
+
+.about-stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	margin-top: 22px;
+}
+
+.about-stats div {
+	padding: 16px;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-stats strong {
+	display: block;
+	margin-bottom: 6px;
+	color: #ffffff;
+	font-size: 0.98rem;
+}
+
+.about-stats span {
+	display: block;
+	color: #b8b8bd;
+	line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+	.about-card {
+		padding: 22px;
+	}
+
+	.about-card h2 {
+		font-size: 1.5rem;
+	}
+
+	.about-stats {
+		grid-template-columns: 1fr;
+	}
+}
