@@ -1,19 +1,24 @@
-import FileUploadPreview from "./components/FileUploadPreview";
-import RegistrationForm from "./components/RegistrationForm";
 import "./App.css";
+import Dashboards from "./components/dashboards";
+import Login from "./components/login";
+import Navbar from "./components/navbar";
+import Signup from "./components/signup";
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "2rem",
-        alignItems: "flex-start",
-        flexWrap: "wrap",
-      }}
-    >
-      <RegistrationForm />
-      <FileUploadPreview />
+    <div className="app-shell">
+      <Navbar />
+
+      <main className="app-layout">
+        <section className="auth-grid" aria-label="authentication forms">
+          <Login />
+          <Signup />
+        </section>
+
+        <section className="dashboard-section" aria-label="dashboard overview">
+          <Dashboards />
+        </section>
+      </main>
     </div>
   );
 }

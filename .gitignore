@@ -1,16 +1,19 @@
 # Dependencies
 node_modules/
+**/node_modules/
 
 # Build output
 dist/
+**/dist/
 dist-ssr/
+**/dist-ssr/
 build/
+**/build/
 
 # Local environment files
 .env
 .env.*
 !.env.example
-*.local
 
 # Logs
 logs/
@@ -23,8 +26,11 @@ lerna-debug.log*
 
 # Cache and tooling
 .vite/
+**/.vite/
 .cache/
+**/.cache/
 coverage/
+**/coverage/
 
 # Editor and OS files
 .vscode/*

@@ -1,0 +1,7 @@
+.signup-card {
+  border-left: 4px solid #5b8def;
+}
+
+.signup-form button {
+  background: linear-gradient(135deg, #5b8def, #7bbf7a);
+}
