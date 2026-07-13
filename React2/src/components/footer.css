@@ -3,11 +3,11 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	border-top: 1px solid rgba(255, 255, 255, 0.08);
-	background: rgba(8, 8, 10, 0.92);
+	border-top: 1px solid var(--surface-border);
+	background: var(--footer-bg);
 	backdrop-filter: blur(12px);
-	color: #d4cfd1;
-	box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.18);
+	color: var(--text);
+	box-shadow: 0 -12px 30px var(--shadow);
 	z-index: 30;
 }
 
@@ -33,12 +33,12 @@
 	font-weight: 700;
 	letter-spacing: 0.08em;
 	color: #fff;
-	background: linear-gradient(180deg, #ff5c5c, #b30000);
-	box-shadow: 0 0 0 1px rgba(255, 77, 77, 0.25), 0 10px 20px rgba(255, 59, 59, 0.18);
+	background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+	box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.25), 0 10px 20px rgba(139, 92, 246, 0.18);
 }
 
 .site-footer-text {
 	margin: 0;
 	font-size: 0.95rem;
-	color: #d4cfd1;
+	color: var(--text);
 }

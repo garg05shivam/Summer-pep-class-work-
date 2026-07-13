@@ -1,5 +1,5 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import Home from './pages/home'
 import Dashboard from './pages/dashboard'
 import Login from './pages/login'
 import Signup from './pages/signup'
@@ -13,7 +13,8 @@ function App() {
 		<div>
 			<Navbar />
 			<Routes>
-				<Route path="/" element={<Dashboard />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/dashboard" element={<Dashboard />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/signup" element={<Signup />} />
@@ -24,4 +25,3 @@ function App() {
 }
 
 export default App
-
