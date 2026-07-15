@@ -1,0 +1,2 @@
+Hello from Node.js!
+This file was created for practicing file system operations.
