@@ -2,12 +2,13 @@
 
 .site-nav {
 	background: var(--nav-bg, rgba(8, 8, 10, 0.9));
-	border-bottom: 1px solid var(--surface-border, rgba(255, 255, 255, 0.08));
+	border-bottom: 1px solid var(--nav-border, rgba(255, 255, 255, 0.08));
 	color: var(--text-h, #fff);
 	position: sticky;
 	top: 0;
 	z-index: 20;
 	backdrop-filter: blur(12px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .site-nav-inner {
@@ -20,10 +21,10 @@
 }
 
 .site-title {
-	color: #8b5cf6;
+	color: var(--nav-title);
 	font-size: 1.1rem;
 	margin: 0;
-	text-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+	text-shadow: 0 0 12px color-mix(in srgb, var(--nav-title) 32%, transparent);
 }
 
 .site-links {
@@ -34,15 +35,16 @@
 }
 
 .site-links a {
-	color: #c6c6c9;
+	color: var(--nav-link);
 	text-decoration: none;
-	transition: color 0.2s ease, opacity 0.2s ease;
+	transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 	font-weight: 500;
 }
 
 .site-links a:hover {
-	color: #a78bfa;
+	color: var(--nav-link-hover);
 	opacity: 1;
+	transform: translateY(-1px);
 }
 
 .theme-toggle {
@@ -52,7 +54,7 @@
 	gap: 8px;
 	border: 1px solid var(--accent-border);
 	border-radius: 999px;
-	background: var(--accent-bg);
+	background: var(--toggle-bg);
 	color: var(--text-h);
 	font: inherit;
 	font-size: 0.9rem;
@@ -65,6 +67,7 @@
 .theme-toggle:hover {
 	border-color: var(--accent);
 	color: var(--accent);
+	background: var(--accent-bg);
 }
 
 .theme-toggle-icon {

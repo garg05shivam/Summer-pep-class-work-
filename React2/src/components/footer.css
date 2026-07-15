@@ -3,11 +3,11 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	border-top: 1px solid var(--surface-border);
+	border-top: 1px solid var(--footer-border);
 	background: var(--footer-bg);
 	backdrop-filter: blur(12px);
-	color: var(--text);
-	box-shadow: 0 -12px 30px var(--shadow);
+	color: var(--footer-text);
+	box-shadow: 0 -12px 30px var(--footer-shadow);
 	z-index: 30;
 }
 
@@ -40,5 +40,6 @@
 .site-footer-text {
 	margin: 0;
 	font-size: 0.95rem;
-	color: var(--text);
+	color: var(--footer-text);
+	font-weight: 600;
 }

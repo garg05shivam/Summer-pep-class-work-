@@ -12,11 +12,11 @@
 
 
 .auth-card {
-  width: min(760px, calc(100% - 40px));
+  width: min(420px, 100%);
   background: var(--surface);
   border: 1px solid var(--surface-border);
-  border-radius: 18px;
-  padding: 20px 20px 22px;
+  border-radius: 14px;
+  padding: 28px 26px 30px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
@@ -24,24 +24,24 @@
 
 
 .login-page h2 {
-  color: #8b5cf6;
+  color: var(--accent);
   text-align: center;
-  margin-bottom: 18px;
-  font-size: 1.8rem;
+  margin-bottom: 24px;
+  font-size: 1.65rem;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   align-items: stretch;
 }
 
 .login-form label {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 12px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
   color: var(--text);
   font-size: 15px;
 }
@@ -51,9 +51,9 @@
   background: var(--input-bg);
   border: 1px solid var(--surface-border);
   color: var(--text-h);
-  padding: 10px 12px;
-  border-radius: 6px;
-  height: 40px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  height: 44px;
   box-sizing: border-box;
 }
 
@@ -64,20 +64,22 @@
 
 
 .login-form button {
-  margin-top: 12px;
+  width: min(180px, 100%);
+  margin: 14px auto 0;
   align-self: center;
-  background: linear-gradient(180deg,#8b5cf6,#6d28d9);
-  border: 1px solid #8b5cf6;
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+  border: 1px solid var(--accent);
   color: #fff;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .login-form input:focus {
   outline: none;
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
 }
 
 input:-webkit-autofill,
@@ -103,8 +105,8 @@ input:-internal-autofill-selected {
 }
 
 [data-theme='light'] .login-form input:focus {
-  border-color: #7c3aed;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
 }
 
 [data-theme='light'] .login-form label {
@@ -112,7 +114,7 @@ input:-internal-autofill-selected {
 }
 
 [data-theme='light'] .login-page h2 {
-  color: #7c3aed;
+  color: var(--accent-strong);
 }
 
 [data-theme='light'] input:-webkit-autofill,
@@ -124,7 +126,7 @@ input:-internal-autofill-selected {
 }
 
 [data-theme='light'] .login-form button {
-  background: linear-gradient(180deg, #7c3aed, #6d28d9);
-  border: 1px solid #7c3aed;
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+  border: 1px solid var(--accent);
   color: #fff;
 }

@@ -209,7 +209,8 @@
   margin-right: 40px;
 }
 
-.login-page, .signup-page {
+.auth-rows .login-page,
+.auth-rows .signup-page {
   background: transparent;
   border: 0;
   border-radius: 18px;
@@ -218,13 +219,15 @@
   backdrop-filter: none;
 }
 
-.login-form, .signup-form {
+.auth-rows .login-form,
+.auth-rows .signup-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.login-form label, .signup-form label {
+.auth-rows .login-form label,
+.auth-rows .signup-form label {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -232,7 +235,8 @@
   color: var(--text);
 }
 
-.login-form input, .signup-form input {
+.auth-rows .login-form input,
+.auth-rows .signup-form input {
   padding: 6px 8px;
   border-radius: 4px;
   border: 1px solid var(--surface-border);
@@ -240,12 +244,13 @@
   color: var(--text-h);
 }
 
-.login-form button, .signup-form button {
+.auth-rows .login-form button,
+.auth-rows .signup-form button {
   align-self: flex-start;
   padding: 6px 12px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 59, 59, 0.5);
-  background: linear-gradient(180deg, #ff4d4d, #b60000);
+  border: 1px solid var(--accent-border);
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
   color: #fff;
   cursor: pointer;
 }
