@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    // res.status(201);
+    
     res.send('Response from Login route')
 })
 
@@ -161,4 +161,24 @@ app.post('/login', (req, res) => {
 
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
+});
+
+
+
+app.get('/courses', (req, res) => {
+    const {course}=req.query;
+    if(course){
+        const filteredCourses = students.filter(s => s.course === course);
+        res.json({
+            success: true,
+            count: filteredCourses.length,
+            data: filteredCourses
+        });
+    } else {
+        res.json({
+            success: true,
+            count: students.length,
+            data: students
+        });
+    }
 });
