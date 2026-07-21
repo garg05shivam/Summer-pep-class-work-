@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sachin",
+    "lastName": "Tendulkar",
+    "email": "sachin@gmail.com",
+    "password": "$2b$10$Uk1uVVmZ3MTXBImblmqJa.fl3a5NymhLNeIIKDb3lbtMQfZXWHsDy",
+    "role": "student",
+    "courses": [ 1, 2]
+  },
+  {
+    "id": 2,
+    "firstName": "Virat",
+    "lastName": "Kohli",
+    "email": "virat@gmail.com",
+    "password": "$2b$10$0FZLupFhSfAIuuo1i9gKCuF3M4nlFthKRn/0zAVXz90RPdsrn/Wrq",
+    "role": "student",
+    "courses": []
+  },
+  {
+    "id": 3,
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@gmail.com",
+    "password": "$2b$10$0PuOppZqCXOTmbnm/XFPx.vsEt99r2Lr.DmEb4rF/yR6zRuAIk5Ju",
+    "role": "student",
+    "courses": []
+  }
+]
